@@ -408,3 +408,42 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+#testimonios {
+    margin: 40px 0;
+}
+
+.testimonio {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#comentarioForm {
+    margin-top: 20px;
+}
+
+#comentarioForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#comentarioForm input,
+#comentarioForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#comentarioForm button {
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#comentarioForm button:hover {
+    background-color: #128C7E;
+}

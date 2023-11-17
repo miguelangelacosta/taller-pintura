@@ -56,35 +56,26 @@
     </div>
 </section>
 
- <!-- Sección de precios con tabla -->
- <section id="precios">
-    <h2>Precios</h2>
-    <p>A continuación, se muestra nuestra lista de precios:</p>
+<!-- Agrega una tabla para mostrar los resultados de los precios -->
+<table id="resultadoTabla" style="margin-top: 20px;">
+    <thead>
+        <tr>
+            <th>Parte</th>
+            <th>Descripción</th>
+            <th>Precio Calculado</th>
+        </tr>
+    </thead>
+    <tbody id="pricingBody">
+        <!-- Las filas de la tabla se agregarán dinámicamente aquí -->
+    </tbody>
+</table>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Servicio</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Servicio 1</td>
-                <td>$100</td>
-            </tr>
-            <tr>
-                <td>Servicio 2</td>
-                <td>$150</td>
-            </tr>
-            <tr>
-                <td>Servicio 3</td>
-                <td>$200</td>
-            </tr>
-            <!-- Puedes agregar más filas según sea necesario -->
-        </tbody>
-    </table>
-</section>
+<!-- Resto del formulario -->
+<form id="comentarioForm">
+    <!-- ... (tu formulario existente) ... -->
+    <button type="button" onclick="dejarComentario()">Dejar Comentario</button>
+</form>
+
 <!-- Sección de Acerca -->
 <section id="acerca">
     <h2>Acerca</h2>
@@ -98,6 +89,22 @@
 <section id="testimonios">
     <h2>Testimonios</h2>
     <!-- Contenido de la sección Testimonios -->
+    <!-- Agrega esta sección en tu HTML donde desees mostrar los testimonios -->
+<section id="testimonios">
+    <h2>Testimonios</h2>
+    <div id="testimoniosContainer"></div>
+
+    <!-- Formulario para dejar un comentario -->
+    <form id="comentarioForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" required></textarea>
+
+        <button type="button" onclick="dejarComentario()">Dejar Comentario</button>
+    </form>
+</section>
     <p>
         "Estoy muy satisfecho con la calidad de las piezas que obtuve de Autopintu. El servicio al cliente fue excepcional y definitivamente volveré a comprar aquí." - Cliente Feliz
     </p>
