@@ -8,49 +8,119 @@
 </head>
 <body>
 
-<div class="logo">YourSite</div>
+<div class="logo">autopintu</div>
+<!-- Agrega el menú de navegación en la cabecera -->
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#acerca">Acerca</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contactos">Contactos</a>
+</nav>
 
-<!-- Agregar una barra de búsqueda al DOM -->
-<input type="text" id="busqueda" class="search-bar" placeholder="Buscar parte del automóvil" oninput="buscarPartes(this.value)">
 
-<div class="container">
-    <div class="card" id="puertas" onclick="mostrarParte('puertas')">
-        <img src="https://source.unsplash.com/800x600/?car-doors" alt="Puertas">
-        <h3>Puertas</h3>
-        <p>Descripción de las puertas...</p>
-        <button class="whatsapp-button" onclick="solicitarCotizacion('puertas')">Solicitar Cotización en WhatsApp</button>
+    
+<!-- Sección de Inicio -->
+<section id="inicio">
+    <h2>Inicio</h2>
+    <!-- Agregar una barra de búsqueda al DOM -->
+    <input type="text" id="busqueda" class="search-bar" placeholder="Buscar parte del automóvil" oninput="buscarPartes(this.value)">
+
+    <div class="container">
+        <div class="card" id="puertas" onclick="mostrarParte('puertas')">
+            <img src="https://source.unsplash.com/800x600/?car-doors" alt="Puertas">
+            <h3>Puertas</h3>
+            <p>Descripción de las puertas...</p>
+            <button class="whatsapp-button" onclick="solicitarCotizacion('puertas')">Solicitar Cotización en WhatsApp</button>
+        </div>
+
+        <div class="card" id="capo" onclick="mostrarParte('capo')">
+            <img src="https://source.unsplash.com/800x600/?car-hood" alt="Capó">
+            <h3>Capó</h3>
+            <p>Descripción del capó...</p>
+            <button class="whatsapp-button" onclick="solicitarCotizacion('capo')">Solicitar Cotización en WhatsApp</button>
+        </div>
+
+        <div class="card" id="atras" onclick="mostrarParte('atras')">
+            <img src="https://source.unsplash.com/800x600/?car-back" alt="Parte de Atrás">
+            <h3>Parte de Atrás</h3>
+            <p>Descripción de la parte de atrás...</p>
+            <button class="whatsapp-button" onclick="solicitarCotizacion('atras')">Solicitar Cotización en WhatsApp</button>
+        </div>
+
+        <div class="card" id="techo" onclick="mostrarParte('techo')">
+            <img src="https://source.unsplash.com/800x600/?car-roof" alt="Techo">
+            <h3>Techo</h3>
+            <p>Descripción del techo...</p>
+            <button class="whatsapp-button" onclick="solicitarCotizacion('techo')">Solicitar Cotización en WhatsApp</button>
+        </div>
     </div>
+</section>
 
-    <div class="card" id="capo" onclick="mostrarParte('capo')">
-        <img src="https://source.unsplash.com/800x600/?car-hood" alt="Capó">
-        <h3>Capó</h3>
-        <p>Descripción del capó...</p>
-        <button class="whatsapp-button" onclick="solicitarCotizacion('capo')">Solicitar Cotización en WhatsApp</button>
-    </div>
+ <!-- Sección de precios con tabla -->
+ <section id="precios">
+    <h2>Precios</h2>
+    <p>A continuación, se muestra nuestra lista de precios:</p>
 
-    <div class="card" id="atras" onclick="mostrarParte('atras')">
-        <img src="https://source.unsplash.com/800x600/?car-back" alt="Parte de Atrás">
-        <h3>Parte de Atrás</h3>
-        <p>Descripción de la parte de atrás...</p>
-        <button class="whatsapp-button" onclick="solicitarCotizacion('atras')">Solicitar Cotización en WhatsApp</button>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Servicio</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Servicio 1</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Servicio 2</td>
+                <td>$150</td>
+            </tr>
+            <tr>
+                <td>Servicio 3</td>
+                <td>$200</td>
+            </tr>
+            <!-- Puedes agregar más filas según sea necesario -->
+        </tbody>
+    </table>
+</section>
+<!-- Sección de Acerca -->
+<section id="acerca">
+    <h2>Acerca</h2>
+    <!-- Contenido de la sección Acerca -->
+    <p>
+        Bienvenido a Autopintu, tu tienda en línea de confianza para todas las necesidades de autopartes. Nos enorgullece ofrecer productos de alta calidad y un servicio excepcional a nuestros clientes. Con años de experiencia en la industria automotriz, nos esforzamos por ser tu destino preferido para encontrar las mejores soluciones para tu vehículo.
+    </p>
+</section>
 
-    <div class="card" id="techo" onclick="mostrarParte('techo')">
-        <img src="https://source.unsplash.com/800x600/?car-roof" alt="Techo">
-        <h3>Techo</h3>
-        <p>Descripción del techo...</p>
-        <button class="whatsapp-button" onclick="solicitarCotizacion('techo')">Solicitar Cotización en WhatsApp</button>
-    </div>
-</div>
+<!-- Sección de Testimonios -->
+<section id="testimonios">
+    <h2>Testimonios</h2>
+    <!-- Contenido de la sección Testimonios -->
+    <p>
+        "Estoy muy satisfecho con la calidad de las piezas que obtuve de Autopintu. El servicio al cliente fue excepcional y definitivamente volveré a comprar aquí." - Cliente Feliz
+    </p>
+</section>
+
+<!-- Sección de Contactos -->
+<section id="contactos">
+    <h2>Contactos</h2>
+    <!-- Contenido de la sección Contactos -->
+    <p>
+        ¿Tienes alguna pregunta o inquietud? ¡No dudes en ponerte en contacto con nosotros! Puedes encontrarnos en nuestra tienda física o comunicarte con nosotros a través de nuestro formulario en línea.
+    </p>
+</section>
+
 <!-- Modal Section -->
 <div class="modal" id="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
         <img src="" alt="Imagen de la parte seleccionada" id="modalImage">
         <p id="modalDescription"></p>
+        <button class="whatsapp-button" onclick="solicitarCotizacion()">Solicitar Cotización en WhatsApp</button>
     </div>
 </div>
-
 
 <script src="script.js"></script>
 </body>
