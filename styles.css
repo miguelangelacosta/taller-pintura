@@ -205,3 +205,27 @@ body {
     right: 10px;
     cursor: pointer;
 }
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card button.whatsapp-button {
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.card:hover button.whatsapp-button {
+    background-color: #128C7E; /* Change the color on hover */
+}
