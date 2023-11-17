@@ -55,26 +55,32 @@
         </div>
     </div>
 </section>
-
-<!-- Agrega una tabla para mostrar los resultados de los precios -->
-<table id="resultadoTabla" style="margin-top: 20px;">
-    <thead>
-        <tr>
-            <th>Parte</th>
-            <th>Descripción</th>
-            <th>Precio Calculado</th>
-        </tr>
-    </thead>
-    <tbody id="pricingBody">
-        <!-- Las filas de la tabla se agregarán dinámicamente aquí -->
-    </tbody>
-</table>
-
-<!-- Resto del formulario -->
+<!-- Formulario -->
 <form id="comentarioForm">
-    <!-- ... (tu formulario existente) ... -->
-    <button type="button" onclick="dejarComentario()">Dejar Comentario</button>
+    
+    <input type="text" id="nombre" required>
+
+    
+    <textarea id="comentario" required></textarea>
+
+    <!-- Nuevo campo para describir el daño -->
+    <label for="danio">Descripción del daño:</label>
+    <textarea id="danio" required></textarea>
+
+    <button type="button" onclick="dejarComentario()">calcular valor</button>
 </form>
+
+<!-- Tabla de resultados -->
+<div id="resultados">
+    <h2>Resultados del cálculo</h2>
+    <table border="1">
+        <tr>
+            <th>Descripción del daño</th>
+            <th>Precio</th>
+        </tr>
+        <!-- Los resultados se agregarán dinámicamente aquí -->
+    </table>
+</div>
 
 <!-- Sección de Acerca -->
 <section id="acerca">
@@ -91,16 +97,6 @@
     <!-- Contenido de la sección Testimonios -->
     <!-- Agrega esta sección en tu HTML donde desees mostrar los testimonios -->
 <section id="testimonios">
-    <h2>Testimonios</h2>
-    <div id="testimoniosContainer"></div>
-
-    <!-- Formulario para dejar un comentario -->
-    <form id="comentarioForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
-
-        <label for="comentario">Comentario:</label>
-        <textarea id="comentario" required></textarea>
 
         <button type="button" onclick="dejarComentario()">Dejar Comentario</button>
     </form>

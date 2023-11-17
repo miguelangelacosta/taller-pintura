@@ -69,7 +69,7 @@ function mostrarPrecios(partName, description) {
         // Calculate the price based on the damage description
         var precioBase = preciosEjemplo[partName.toLowerCase()];
         var precioCalculado = calcularPrecio(precioBase, description);
-        priceCell.innerText = '$' + precioCalculado;
+        priceCell.innerText = '$' + precioCalculado.toFixed(2); // Formatear el precio como moneda
 
         // Append cells to the row
         row.appendChild(partCell);
@@ -105,32 +105,34 @@ function buscarPartes(termino) {
 }
 
 function dejarComentario() {
-    var nombre = document.getElementById("nombre").value;
-    var comentario = document.getElementById("comentario").value;
+    // Obtener los valores del formulario
+    var nombre = document.getElementById('nombre').value;
+    var comentario = document.getElementById('comentario').value;
+    var danio = document.getElementById('danio').value;
 
-    if (nombre && comentario) {
-        // Create a new testimonial element
-        var testimonioElement = document.createElement("div");
-        testimonioElement.className = "testimonio";
-        testimonioElement.innerHTML = "<strong>" + nombre + ":</strong> " + comentario;
+    // Calcular el precio según la descripción del daño (puedes personalizar esta lógica según tus necesidades)
+    var precio = calcularPrecio(danio);
 
-        // Add the new testimonial to the testimonials container
-        var testimoniosContainer = document.getElementById("testimoniosContainer");
-        testimoniosContainer.appendChild(testimonioElement);
+    // Crear una nueva fila en la tabla de resultados
+    var resultadosTable = document.querySelector('#resultados table');
+    var newRow = resultadosTable.insertRow(-1);
 
-        // Clear the form
-        document.getElementById("nombre").value = "";
-        document.getElementById("comentario").value = "";
-    } else {
-        alert("Please fill out all fields before leaving a comment.");
-    }
+    // Insertar celdas con los valores del formulario y el precio calculado
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+
+    cell1.textContent = danio;
+    cell2.textContent = '$' + precio.toFixed(2); // Formatear el precio como moneda
+
+    // Limpiar los campos del formulario después de agregar el comentario
+    document.getElementById('nombre').value = '';
+    document.getElementById('comentario').value = '';
+    document.getElementById('danio').value = '';
 }
 
-// Function to calculate the price based on the damage description
-function calcularPrecio(precioBase, description) {
-    // Add your logic to calculate the price based on the description
-    // For simplicity, this function returns a fixed value for demonstration purposes.
-    return precioBase + 50;
+function calcularPrecio(descripcionDanio) {
+    // Lógica para calcular el precio según la descripción del daño
+    // Puedes personalizar esta lógica según tus necesidades
+    // En este ejemplo, simplemente devolvemos un precio aleatorio entre 100 y 500
+    return Math.floor(Math.random() * (500 - 100 + 1)) + 100;
 }
-
-
