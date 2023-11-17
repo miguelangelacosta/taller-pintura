@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>YourSite</title>
+</head>
+<body>
+
+<div class="logo">YourSite</div>
+
+<!-- Agregar una barra de búsqueda al DOM -->
+<input type="text" id="busqueda" class="search-bar" placeholder="Buscar parte del automóvil" oninput="buscarPartes(this.value)">
+
+<div class="container">
+    <div class="card" id="puertas" onclick="mostrarParte('puertas')">
+        <img src="https://source.unsplash.com/800x600/?car-doors" alt="Puertas">
+        <h3>Puertas</h3>
+        <p>Descripción de las puertas...</p>
+        <button class="whatsapp-button" onclick="solicitarCotizacion('puertas')">Solicitar Cotización en WhatsApp</button>
+    </div>
+
+    <div class="card" id="capo" onclick="mostrarParte('capo')">
+        <img src="https://source.unsplash.com/800x600/?car-hood" alt="Capó">
+        <h3>Capó</h3>
+        <p>Descripción del capó...</p>
+        <button class="whatsapp-button" onclick="solicitarCotizacion('capo')">Solicitar Cotización en WhatsApp</button>
+    </div>
+
+    <div class="card" id="atras" onclick="mostrarParte('atras')">
+        <img src="https://source.unsplash.com/800x600/?car-back" alt="Parte de Atrás">
+        <h3>Parte de Atrás</h3>
+        <p>Descripción de la parte de atrás...</p>
+        <button class="whatsapp-button" onclick="solicitarCotizacion('atras')">Solicitar Cotización en WhatsApp</button>
+    </div>
+
+    <div class="card" id="techo" onclick="mostrarParte('techo')">
+        <img src="https://source.unsplash.com/800x600/?car-roof" alt="Techo">
+        <h3>Techo</h3>
+        <p>Descripción del techo...</p>
+        <button class="whatsapp-button" onclick="solicitarCotizacion('techo')">Solicitar Cotización en WhatsApp</button>
+    </div>
+</div>
+
+<!-- Modal Section -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img src="" alt="Imagen de la parte seleccionada" id="modalImage">
+        <p id="modalDescription"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
