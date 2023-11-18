@@ -130,9 +130,6 @@ function dejarComentario() {
     document.getElementById('danio').value = '';
 }
 
-function calcularPrecio(descripcionDanio) {
-    // Lógica para calcular el precio según la descripción del daño
-    // Puedes personalizar esta lógica según tus necesidades
-    // En este ejemplo, simplemente devolvemos un precio aleatorio entre 100 y 500
-    return Math.floor(Math.random() * (500 - 100 + 1)) + 100;
-}
+document.querySelector('.menu-icon').addEventListener('click', function () {
+    document.querySelector('.menu-items').classList.toggle('show');
+});
