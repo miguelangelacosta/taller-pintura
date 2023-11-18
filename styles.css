@@ -10,7 +10,7 @@ body {
 .logo {
     font-size: 36px;
     font-weight: bold;
-    color: #333;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-top: 20px;
@@ -206,7 +206,7 @@ body {
 .logo {
     font-size: 36px;
     font-weight: bold;
-    color: #dfbbbb;
+    color: #161616;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-top: 20px;
@@ -220,6 +220,7 @@ body {
 }
 
 
+/* Estilos adicionales según necesidades */
 nav {
     background-color: #bde0f7;
     color: white;
@@ -234,6 +235,55 @@ nav a {
     margin: 0 10px;
     font-weight: bold;
 }
+
+/* Nueva clase para el icono de la hamburguesa */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Mostrar el icono de hamburguesa en dispositivos móviles */
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #bde0f7;
+        z-index: 1000;
+        display: none;
+    }
+
+    .menu-items a {
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-items.show {
+        display: flex;
+    }
+}
+
 
 .container {
     display: flex;

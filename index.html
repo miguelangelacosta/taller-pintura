@@ -55,33 +55,36 @@
         </div>
     </div>
 </section>
-<!-- Formulario -->
-<form id="comentarioForm">
-    
-    <input type="text" id="nombre" required>
 
-    
-    <textarea id="comentario" required></textarea>
+ <!-- Sección de precios con tabla -->
+ <section id="precios">
+    <h2>Precios</h2>
+    <p>A continuación, se muestra nuestra lista de precios:</p>
 
-    <!-- Nuevo campo para describir el daño -->
-    <label for="danio">Descripción del daño:</label>
-    <textarea id="danio" required></textarea>
-
-    <button type="button" onclick="dejarComentario()">calcular valor</button>
-</form>
-
-<!-- Tabla de resultados -->
-<div id="resultados">
-    <h2>Resultados del cálculo</h2>
-    <table border="1">
-        <tr>
-            <th>Descripción del daño</th>
-            <th>Precio</th>
-        </tr>
-        <!-- Los resultados se agregarán dinámicamente aquí -->
+    <table>
+        <thead>
+            <tr>
+                <th>Servicio</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Servicio 1</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Servicio 2</td>
+                <td>$150</td>
+            </tr>
+            <tr>
+                <td>Servicio 3</td>
+                <td>$200</td>
+            </tr>
+            <!-- Puedes agregar más filas según sea necesario -->
+        </tbody>
     </table>
-</div>
-
+</section>
 <!-- Sección de Acerca -->
 <section id="acerca">
     <h2>Acerca</h2>
@@ -90,13 +93,16 @@
         Bienvenido a Autopintu, tu tienda en línea de confianza para todas las necesidades de autopartes. Nos enorgullece ofrecer productos de alta calidad y un servicio excepcional a nuestros clientes. Con años de experiencia en la industria automotriz, nos esforzamos por ser tu destino preferido para encontrar las mejores soluciones para tu vehículo.
     </p>
 </section>
-
-<!-- Sección de Testimonios -->
 <section id="testimonios">
     <h2>Testimonios</h2>
-    <!-- Contenido de la sección Testimonios -->
-    <!-- Agrega esta sección en tu HTML donde desees mostrar los testimonios -->
-<section id="testimonios">
+    <div id="testimoniosContainer"></div>
+<!-- Formulario para dejar un comentario -->
+    <form id="comentarioForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" required></textarea>
 
         <button type="button" onclick="dejarComentario()">Dejar Comentario</button>
     </form>
