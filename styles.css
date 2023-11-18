@@ -285,3 +285,21 @@ nav a {
         display: flex;
     }
 }
+
+
+#highlights {
+    background-color: #bbbbbb;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#highlights ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#highlights li {
+    margin-bottom: 10px;
+}
