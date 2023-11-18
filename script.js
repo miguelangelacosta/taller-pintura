@@ -15,71 +15,46 @@ function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
 
-// Attach event listeners to cards dynamically
 document.querySelectorAll('.card').forEach(function (card) {
     card.addEventListener('click', function (event) {
-        // Check if the click was on the image within the card
         if (event.target.tagName.toLowerCase() === 'img') {
-            // Get data from the clicked card
             var imageUrl = card.querySelector('img').src;
             var description = card.querySelector('p').innerText;
-
-            // Open the modal with the retrieved data
             mostrarParte(imageUrl, description);
         }
     });
 });
 
 function solicitarCotizacion() {
-    // Your logic to handle WhatsApp request
-    // ...
-    // For example, you can open a WhatsApp link:
     window.location.href = "https://api.whatsapp.com/send?phone=123456789&text=Hola";
 }
 
-// Sample pricing data
 var preciosEjemplo = {
     'puertas': 100,
     'capo': 150,
     'atras': 120,
     'techo': 200
-    // Add more pricing data as needed
 };
 
 function mostrarPrecios(partName, description) {
     var pricingBody = document.getElementById("pricingBody");
-
-    // Clear existing content
     pricingBody.innerHTML = '';
 
-    // Check if pricing data exists for the selected part
     if (preciosEjemplo.hasOwnProperty(partName.toLowerCase())) {
-        // Create a row in the pricing table
         var row = document.createElement("tr");
-
-        // Create cells for part name, description, and calculated price
         var partCell = document.createElement("td");
         partCell.innerText = partName;
-
         var descriptionCell = document.createElement("td");
         descriptionCell.innerText = description;
-
         var priceCell = document.createElement("td");
-
-        // Calculate the price based on the damage description
         var precioBase = preciosEjemplo[partName.toLowerCase()];
         var precioCalculado = calcularPrecio(precioBase, description);
-        priceCell.innerText = '$' + precioCalculado.toFixed(2); // Formatear el precio como moneda
-
-        // Append cells to the row
+        priceCell.innerText = '$' + precioCalculado.toFixed(2);
         row.appendChild(partCell);
         row.appendChild(descriptionCell);
         row.appendChild(priceCell);
-
-        // Append the row to the pricing table body
         pricingBody.appendChild(row);
     } else {
-        // If no pricing data is available, display a message
         var noPriceRow = document.createElement("tr");
         var noPriceCell = document.createElement("td");
         noPriceCell.colSpan = 3;
@@ -91,40 +66,50 @@ function mostrarPrecios(partName, description) {
 
 function buscarPartes(termino) {
     var tarjetas = document.querySelectorAll('.card');
+    var resultadosBusqueda = document.getElementById('resultadosBusqueda');
+    resultadosBusqueda.innerHTML = '';
+
+    var resultadosEncontrados = false;
 
     tarjetas.forEach(function (tarjeta) {
         var idParte = tarjeta.id;
         var textoParte = tarjeta.querySelector('h3').innerText.toLowerCase();
 
         if (idParte.includes(termino.toLowerCase()) || textoParte.includes(termino.toLowerCase())) {
+            resultadosEncontrados = true;
+
+            var imageUrl = tarjeta.querySelector('img').src;
+            var description = tarjeta.querySelector('p').innerText;
+
+            var resultado = document.createElement('div');
+            resultado.innerHTML = `<img src="${imageUrl}" alt="${idParte}"><p>${description}</p>`;
+            resultadosBusqueda.appendChild(resultado);
+
             tarjeta.style.display = 'block';
         } else {
             tarjeta.style.display = 'none';
         }
     });
+
+    // Ocultar la sección de resultados si no se encontraron resultados
+    if (!resultadosEncontrados) {
+        resultadosBusqueda.innerHTML = 'No se encontraron resultados.';
+    }
 }
 
 function dejarComentario() {
-    // Obtener los valores del formulario
     var nombre = document.getElementById('nombre').value;
     var comentario = document.getElementById('comentario').value;
     var danio = document.getElementById('danio').value;
-
-    // Calcular el precio según la descripción del daño (puedes personalizar esta lógica según tus necesidades)
     var precio = calcularPrecio(danio);
-
-    // Crear una nueva fila en la tabla de resultados
     var resultadosTable = document.querySelector('#resultados table');
     var newRow = resultadosTable.insertRow(-1);
-
-    // Insertar celdas con los valores del formulario y el precio calculado
     var cell1 = newRow.insertCell(0);
     var cell2 = newRow.insertCell(1);
 
     cell1.textContent = danio;
-    cell2.textContent = '$' + precio.toFixed(2); // Formatear el precio como moneda
+    cell2.textContent = '$' + precio.toFixed(2);
 
-    // Limpiar los campos del formulario después de agregar el comentario
     document.getElementById('nombre').value = '';
     document.getElementById('comentario').value = '';
     document.getElementById('danio').value = '';
@@ -133,3 +118,14 @@ function dejarComentario() {
 document.querySelector('.menu-icon').addEventListener('click', function () {
     document.querySelector('.menu-items').classList.toggle('show');
 });
+
+// Función adicional para limpiar resultados al borrar la búsqueda
+document.getElementById('busqueda').addEventListener('input', function () {
+    var termino = this.value;
+    if (termino === '') {
+        resultadosBusqueda.innerHTML = '';
+    } else {
+        buscarPartes(termino);
+    }
+});
+
