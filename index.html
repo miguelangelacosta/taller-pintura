@@ -28,11 +28,11 @@
     <!-- Agregar una barra de búsqueda al DOM -->
     <input type="text" id="busqueda" class="search-bar" placeholder="Buscar parte del automóvil" oninput="buscarPartes(this.value)">
     <div id="resultadosBusqueda"></div>
-    
+    <div>
     <h1>¡Descubre la excelencia en servicios de pintura para carros y motos!</h1>
 
     <p>En nuestro taller especializado, te ofrecemos una transformación completa para tu vehículo. Con técnicas avanzadas y productos de primera calidad, nuestro equipo altamente capacitado garantiza resultados duraderos y excepcionales.</p>
-    
+</div>
     <div class="container">
         
         <div class="card" id="puertas" onclick="mostrarParte('puertas')">
@@ -50,21 +50,20 @@
             <button class="whatsapp-button" onclick="solicitarCotizacion('capot')">Solicitar Cotización en WhatsApp</button>
         </div>
         
-
-        <div class="card" id="atras" onclick="mostrarParte('atras')">
+        <div class="card" id="atras" onclick="mostrarParte('images/parte de atras_high_res.png', 'atras')">
             <img src="images/parte de atras.png" alt="Parte de Atrás">
             <h3>Parte de Atrás</h3>
             <p> Descubre la excelencia en cada detalle con nuestros servicios para la parte trasera de tu vehículo. En nuestro taller de pintura, ofrecemos reparaciones precisas y repintado detallado que resaltan la elegancia y funcionalidad de esta área. Confía en nosotros para transformar la parte trasera de tu auto con un acabado impecable que combina estilo y protección. Solicita tu cotización en WhatsApp ahora.</p>
             <button class="whatsapp-button" onclick="solicitarCotizacion('atras')">Solicitar Cotización en WhatsApp</button>
         </div>
-
-        <div class="card" id="techo" onclick="mostrarParte('techo')">
+        
+        <div class="card" id="techo" onclick="mostrarParte('images/techo_high_res.png', 'techo')">
             <img src="images/techo.png" alt="Techo">
             <h3>Techo</h3>
             <p>Eleva el estilo de tu vehículo confiando en nosotros para los servicios de pintura del techo. En nuestro taller, ofrecemos repintado y reparaciones especializadas que realzan la elegancia y protegen tu auto. Descubre cómo transformamos el techo, brindando un acabado impecable que refleja tu buen gusto. Solicita tu cotización en WhatsApp para obtener un techo que destaque en cada viaje.</p>
             <button class="whatsapp-button" onclick="solicitarCotizacion('techo')">Solicitar Cotización en WhatsApp</button>
         </div>
-    </div>
+        
 </section>
 
 <div id="highlights">
@@ -121,8 +120,10 @@
     </p>
 </section>
 <section id="testimonios">
+    <div id="comentariosContainer">
     <h2>Testimonios</h2>
     <div id="testimoniosContainer"></div>
+</div>
 <!-- Formulario para dejar un comentario -->
     <form id="comentarioForm">
         <label for="nombre">Nombre:</label>
