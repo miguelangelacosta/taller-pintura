@@ -106,3 +106,76 @@ document.querySelectorAll('.card').forEach(function (card) {
 });
 
 // Otras funciones y eventos no modificados
+// Event listener para la barra de búsqueda
+document.getElementById('busqueda').addEventListener('input', function () {
+    var termino = this.value;
+    if (termino === '') {
+        resultadosBusqueda.innerHTML = '';
+    } else {
+        buscarPartes(termino);
+    }
+});
+
+function buscarPartes(termino) {
+    // Itera sobre cada tarjeta
+    document.querySelectorAll('.card').forEach(function (card) {
+        var description = card.querySelector('p').innerText.toLowerCase();
+
+        // Verifica si la descripción de la tarjeta incluye el término de búsqueda
+        if (description.includes(termino.toLowerCase())) {
+            card.style.display = 'block'; // Muestra la tarjeta si hay coincidencia
+        } else {
+            card.style.display = 'none'; // Oculta la tarjeta si no hay coincidencia
+        }
+    });
+}
+// Event listener para el formulario de comentarios
+document.getElementById('comentarioForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita que se recargue la página al enviar el formulario
+
+    // Obtiene el comentario del formulario
+    var comentario = document.getElementById('comentarioInput').value;
+
+    // Llama a la función para guardar y mostrar el comentario
+    guardarYMostrarComentario(comentario);
+
+    // Limpia el campo de comentario después de enviar
+    document.getElementById('comentarioInput').value = '';
+});
+
+function guardarYMostrarComentario(comentario) {
+    // Crea un nuevo elemento de comentario
+    var nuevoComentario = document.createElement('div');
+    nuevoComentario.className = 'comentario';
+    nuevoComentario.innerText = comentario;
+
+    // Agrega el nuevo comentario al contenedor de comentarios
+    document.getElementById('comentariosContainer').appendChild(nuevoComentario);
+}
+// Event listener para las tarjetas
+
+
+// Nueva función para mostrar la parte completa al hacer clic en una tarjeta
+function mostrarParteCompleta(imageUrl, description) {
+    // Setea el contenido completo en el modal
+    document.getElementById("modalImage").src = imageUrl;
+    document.getElementById("modalDescription").innerText = description;
+
+    // Muestra el modal
+    document.getElementById("modal").style.display = "flex";
+
+    // Popula la tabla de precios
+    mostrarPrecios(description);
+}
+
+document.querySelectorAll('.card').forEach(function (card) {
+    card.addEventListener('click', function (event) {
+        var description = card.querySelector('p').innerText;
+
+        // Utiliza el nombre de la tarjeta como parte del nombre de la imagen
+        var imageName = card.id + ".png";
+        var imageUrl = "images/" + imageName;
+
+        mostrarParte(imageUrl, description);
+    });
+});

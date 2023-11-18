@@ -20,8 +20,6 @@
         </nav>
     </div>
 
-
-    
 <!-- Sección de Inicio -->
 <section id="inicio">
     <h2>Inicio</h2>
@@ -35,29 +33,32 @@
 </div>
     <div class="container">
         
-        <div class="card" id="puertas" onclick="mostrarParte('puertas')">
-            <img src="images/puerta.png" alt="Puertas">
-            <h3>Puertas</h3>
-            <p> 
-                Transforma tus puertas con nuestros servicios especializados en pintura. Nuestro equipo experto se encarga de preparar, pintar y dar el toque final para un acabado impecable. Ya sea reparar arañazos, eliminar abolladuras o renovar el aspecto, confía en nosotros para resultados de alta calidad. Destaca la belleza de tu vehículo con nuestras soluciones de pintura.</p>
-            <button class="whatsapp-button" onclick="solicitarCotizacion('puertas')">Solicitar Cotización en WhatsApp</button>
-        </div>
-        
-        <div class="card" id="capot" onclick="mostrarParte('capot')">
-            <img src="images/capot.png" alt="capot">
-            <h3>capot</h3>
+     
+
+<div class="card" id="puertas" onclick="mostrarParte('images/puerta.png', 'Puertas')">
+    <img src="images/puerta.png" alt="Puertas">
+    <h3>Puertas</h3>
+    <p>Transforma tus puertas con nuestros servicios especializados en pintura. Nuestro equipo experto se encarga de preparar, pintar y dar el toque final para un acabado impecable. Ya sea reparar arañazos, eliminar abolladuras o renovar el aspecto, confía en nosotros para resultados de alta calidad. Destaca la belleza de tu vehículo con nuestras soluciones de pintura.</p>
+    <button class="whatsapp-button" onclick="solicitarCotizacion('puertas')">Solicitar Cotización en WhatsApp</button>
+</div>
+
+
+
+
+        <div class="card" id="capot" onclick="mostrarParte('images/capot.png', 'Capot')">
+            <img src="images/capot.png" alt="Capot">
+            <h3>Capot</h3>
             <p>Transforma el capó de tu vehículo con nuestros servicios especializados. En nuestro taller de pintura, resaltamos la elegancia y funcionalidad con reparaciones, retoques y pintura de alta calidad. Confía en nosotros para un capó renovado que refleje tu estilo. Descubre la fusión ideal entre estética y cuidado automotriz.</p>
             <button class="whatsapp-button" onclick="solicitarCotizacion('capot')">Solicitar Cotización en WhatsApp</button>
         </div>
-        
-        <div class="card" id="atras" onclick="mostrarParte('images/parte de atras_high_res.png', 'atras')">
-            <img src="images/parte de atras.png" alt="Parte de Atrás">
+        <div class="card" id="atras" onclick="mostrarParte('images/parte_de_atras.png', 'Parte de Atrás')">
+            <img src="images/partedeatras.png" alt="Parte de Atrás">
             <h3>Parte de Atrás</h3>
             <p> Descubre la excelencia en cada detalle con nuestros servicios para la parte trasera de tu vehículo. En nuestro taller de pintura, ofrecemos reparaciones precisas y repintado detallado que resaltan la elegancia y funcionalidad de esta área. Confía en nosotros para transformar la parte trasera de tu auto con un acabado impecable que combina estilo y protección. Solicita tu cotización en WhatsApp ahora.</p>
-            <button class="whatsapp-button" onclick="solicitarCotizacion('atras')">Solicitar Cotización en WhatsApp</button>
+            <button class="whatsapp-button" onclick="solicitarCotizacion('parte de atras')">Solicitar Cotización en WhatsApp</button>
         </div>
         
-        <div class="card" id="techo" onclick="mostrarParte('images/techo_high_res.png', 'techo')">
+        <div class="card" id="techo" onclick="mostrarParte('images/techo_high_res.png', 'Techo')">
             <img src="images/techo.png" alt="Techo">
             <h3>Techo</h3>
             <p>Eleva el estilo de tu vehículo confiando en nosotros para los servicios de pintura del techo. En nuestro taller, ofrecemos repintado y reparaciones especializadas que realzan la elegancia y protegen tu auto. Descubre cómo transformamos el techo, brindando un acabado impecable que refleja tu buen gusto. Solicita tu cotización en WhatsApp para obtener un techo que destaque en cada viaje.</p>
@@ -96,7 +97,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>servicio de puertas desde</td>
+                <td>Servicio de puertas desde</td>
                 <td>$300</td>
             </tr>
             <tr>
@@ -123,21 +124,12 @@
     <div id="comentariosContainer">
     <h2>Testimonios</h2>
     <div id="testimoniosContainer"></div>
-</div>
-<!-- Formulario para dejar un comentario -->
-    <form id="comentarioForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
 
-        <label for="comentario">Comentario:</label>
-        <textarea id="comentario" required></textarea>
 
-        <button type="button" onclick="dejarComentario()">Dejar Comentario</button>
-    </form>
-</section>
     <p>
         "Estoy muy satisfecho con la calidad de las piezas que obtuve de Autopintu. El servicio al cliente fue excepcional y definitivamente volveré a comprar aquí." - Cliente Feliz
     </p>
+</div>
 </section>
 
 <!-- Sección de Contactos -->
@@ -158,7 +150,6 @@
         <button class="whatsapp-button" onclick="solicitarCotizacion()">Solicitar Cotización en WhatsApp</button>
     </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
